@@ -21,6 +21,3 @@ def main():
         with tempfile.NamedTemporaryFile() as f:
             f.write(requests.get(url).content)
             subprocess.call(["qlmanage", "-c", "com.compuserve.gif", "-p", f.name], stdout=DEVNULL, stderr=DEVNULL)
-            
-if __name__ == "__main__":
-    main()

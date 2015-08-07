@@ -1,0 +1,3 @@
+import gif
+
+gif.main()
