@@ -6,7 +6,7 @@ setup(name='giphy wht',
       version='1.0.0',
       description='Gif viewer on console',
       author='Roland Crosby',
-      author_email='rolo@croz.by',
+      author_email='roland@rolandcrosby.com',
       url='https://github.com/rolandcrosby/gif',
       entry_points={
           'console_scripts': [
