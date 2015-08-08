@@ -14,4 +14,5 @@ setup(name='giphy wht',
           ]
       },
       packages = ['gif'],
+      install_requires=['requests'],
       )
