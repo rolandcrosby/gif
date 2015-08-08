@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from setuptools import setup, find_packages
+from setuptools import setup
 
 setup(name='giphy wht',
       version='1.0.0',
@@ -14,4 +14,5 @@ setup(name='giphy wht',
           ]
       },
       packages = ['gif'],
+      install_requires=['requests'],
       )
