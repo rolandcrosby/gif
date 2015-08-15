@@ -11,7 +11,7 @@ except ImportError:
     DEVNULL = open(os.devnull, 'wb')
 
 def giphy_translate(phrase):
-   response = requests.get("http://api.giphy.com/v1/gifs/translate?s={}&api_key=dc6zaTOxFJmzC".format(phrase)).json()
+   response = requests.get("http://api.giphy.com/v1/gifs/translate?api_key=dc6zaTOxFJmzC", params={"s": phrase}).json()
    return (response['meta']['status'], response['data'])
 
 def main():
