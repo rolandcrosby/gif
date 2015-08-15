@@ -16,11 +16,13 @@ def giphy_translate(phrase):
 
 def main():
     parser = argparse.ArgumentParser(description="get a GIF from the Giphy API")
+    parser.add_argument("--verbose", "-v", help="show Giphy URL with preview", action="store_true")
     parser.add_argument("subcommand", help="term to search Giphy for")
     parsed, args = parser.parse_known_args()
     args.insert(0, parsed.subcommand)
     status, body = giphy_translate(" ".join(args))
     if status == 200 and body != []:
+        if parsed.verbose: print(body['url'])
         url = body['images']['downsized']['url']
         with tempfile.NamedTemporaryFile() as f:
             f.write(requests.get(url).content)
