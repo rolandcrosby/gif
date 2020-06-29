@@ -2,9 +2,9 @@
 
 from setuptools import setup
 
-setup(name='giphy wht',
-      version='1.0.1',
-      description='Gif viewer on console',
+setup(name='gif',
+      version='1.0.2',
+      description='command-line porcelain for Gif',
       author='Roland Crosby',
       author_email='roland@rolandcrosby.com',
       url='https://github.com/rolandcrosby/gif',

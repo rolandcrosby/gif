@@ -12,4 +12,4 @@ roland@roland-mac ~ $ gif branch
 roland@roland-mac ~ $ gif checkout
 ```
 
-Powered by [Giphy](http://api.giphy.com).
+Should work with Python 2 and 3 on all recent macOS versions. Powered by [Giphy](http://api.giphy.com).

@@ -5,14 +5,20 @@ import argparse
 import tempfile
 import subprocess
 try:
-    from subprocess import DEVNULL # py3k
+    from subprocess import DEVNULL
 except ImportError:
     import os
     DEVNULL = open(os.devnull, 'wb')
 
 def giphy_translate(phrase):
-   response = requests.get("http://api.giphy.com/v1/gifs/translate?api_key=dc6zaTOxFJmzC", params={"s": phrase}).json()
-   return (response['meta']['status'], response['data'])
+    response = requests.get("http://api.giphy.com/v1/gifs/translate?api_key=dc6zaTOxFJmzC", params={"s": phrase})
+    if response.status_code == 200:
+        response = response.json()
+        try:
+            return (response['meta']['status'], response['data'])
+        except KeyError:
+            return (response.status_code, response.json())
+        
 
 def main():
     parser = argparse.ArgumentParser(description="get a GIF from the Giphy API")
